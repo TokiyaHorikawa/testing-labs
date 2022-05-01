@@ -29,7 +29,9 @@ export default function Home({ allPostsData }: Props) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={"./posts/" + id}>
+                <a>{title}</a>
+              </Link>
               <br />
               {id}
               <br />
@@ -37,9 +39,6 @@ export default function Home({ allPostsData }: Props) {
             </li>
           ))}
         </ul>
-        <Link href="./posts/first-post">
-          <a>Read first post</a>
-        </Link>
       </section>
     </Layout>
   );
