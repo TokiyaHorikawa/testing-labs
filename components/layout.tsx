@@ -34,6 +34,7 @@ export default function Layout({ children, home }: Props) {
       <header className={styles.header}>
         {home ? (
           <>
+            <img src="/images" />
             <Image
               priority
               src="/images/profile.jpeg"
