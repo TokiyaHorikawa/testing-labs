@@ -17,6 +17,7 @@ const customJestConfig = {
     "^@/styles/(.*)$": "<rootDir>/styles/$1",
     "^@/lib/(.*)$": "<rootDir>/lib/$1",
   },
+  testMatch: ["**/?(*.)+(spec|test).[jt]s?(x)"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
