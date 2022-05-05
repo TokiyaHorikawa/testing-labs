@@ -16,6 +16,8 @@ const customJestConfig = {
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/styles/(.*)$": "<rootDir>/styles/$1",
     "^@/lib/(.*)$": "<rootDir>/lib/$1",
+    // NOTE: jestがremarkのEMS依存で落ちるため、mockしてごまかしている。
+    remark: "<rootDir>/__mocks__/remarkMock.js",
   },
   testMatch: ["**/?(*.)+(spec|test).[jt]s?(x)"],
 };
