@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   stories: ["../**/*.stories.mdx", "../**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -6,4 +8,10 @@ module.exports = {
     "@storybook/addon-interactions",
   ],
   framework: "@storybook/react",
+  webpackFinal: async (config) => {
+    config.resolve.modules = [...config.resolve.modules, path.resolve("./")];
+    config.node = { fs: "empty" };
+
+    return config;
+  },
 };
