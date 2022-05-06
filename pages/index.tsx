@@ -1,15 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout, { siteTitle } from "@/components/layout";
-import utilStyles from "@/styles/utils.module.css";
-import { getSortedPostsData } from "@/lib/posts";
-import Date from "@/components/date";
+import Layout, { siteTitle } from "components/layout";
+import utilStyles from "styles/utils.module.css";
+import { getSortedPostsData } from "lib/posts";
+import Date from "components/date";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  // TODO: jestとstorybookがgetSortedPostsDataを呼び出すと落ちる問題の解決
-  // const allPostsData = [{ id: "id" }];
   return {
     props: {
       allPostsData,
